@@ -58,7 +58,7 @@ Animal.init(
       primaryKey: true,
     },
     name: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     species: {

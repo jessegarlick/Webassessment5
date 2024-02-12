@@ -24,25 +24,17 @@ ORDER BY cupcakes.name ASC;
 SELECT 
     email, 
     SUM(num_cupcakes) AS total_cupcakes_ordered
-FROM 
-    customers
-JOIN 
-    orders ON customers.id = customer_id
-GROUP BY 
-    email
-ORDER BY 
-    total_cupcakes_ordered DESC;
+FROM customers
+JOIN orders ON customers.id = customer_id
+GROUP BY email
+ORDER BY total_cupcakes_ordered DESC;
 
 -- problem 6
 SELECT DISTINCT 
     fname, 
     lname, 
     email
-FROM 
-    customers
-JOIN 
-    orders ON customers.id = customer_id
-JOIN 
-    cupcakes ON cupcake_id = cupcakes.id
-WHERE 
-    name = 'funfetti' AND processed = TRUE;
+FROM customers
+JOIN  orders ON customers.id = customer_id
+JOIN cupcakes ON cupcake_id = cupcakes.id
+WHERE name = 'funfetti' AND processed = TRUE;
